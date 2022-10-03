@@ -33,6 +33,9 @@ function App() {
         }}
         style={{ width: '100%', height: '100%' }}
         onScan={handleResult}
+        onError={() => {
+          toast.error('Error');
+        }}
       />
     </div>
   );
@@ -64,8 +67,8 @@ function ResultPage({ result, onClose }: ResultPageProps) {
   }, [isCopy]);
 
   return (
-    <div className="h-screen w-screen bg-slate-50 grid place-items-center">
-      <div className="grid grid-cols-[auto,auto] gap-y-2 gap-x-4 text-4xl">
+    <div className="h-screen w-screen bg-slate-100 grid place-items-center">
+      <div className="grid grid-cols-[auto,auto] gap-y-2 gap-x-2 md:gap-x-4 text-lg md:text-4xl">
         <div className="justify-self-end">
           <span className="font-light">NAME</span>
           <span className="text-blue-700 font-bold">:</span>
@@ -93,7 +96,7 @@ function ResultPage({ result, onClose }: ResultPageProps) {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="text-green-700 w-8 h-8"
+                className="text-green-700 w-4 h-4 md:w-8 md:h-8"
               >
                 <path
                   strokeLinecap="round"
@@ -108,7 +111,7 @@ function ResultPage({ result, onClose }: ResultPageProps) {
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="w-8 h-8"
+                className="w-4 h-4 md:w-8 md:h-8"
               >
                 <path
                   strokeLinecap="round"
